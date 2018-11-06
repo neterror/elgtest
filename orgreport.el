@@ -47,11 +47,14 @@
 (defun gt-json-to-org(report buffer)
   (with-current-buffer buffer
     (save-excursion
+      (view-mode -1) ;; turn off view mode (from previos calls)
       (erase-buffer)
       (org-mode)
-      (insert "#+STARTUP: overview\n\n")
-      (gt-append-test-groups (alist-get 'testsuites report))
+      (insert "#+STARTUP: overview\n\n") ;; everything is folded initially
+      (gt-append-test-groups (alist-get 'testsuites report)) ;;append the test groups
       (org-set-startup-visibility)
-      (save-buffer))))
+      (save-buffer)
+      (view-mode))))
+
 
 
