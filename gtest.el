@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t -*-
 (require 'json)
-(load (expand-file-name "orgreport.el"))
+(require 'orgreport)
 
 ;; set the appropriate file name, which can be included as org-agenda file
 (defvar gtest-report "~/org/gtest.org")
